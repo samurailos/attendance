@@ -9,8 +9,9 @@ require 'vendor/autoload.php'; // If you're using Composer (recommended)
 class SendEmail{
 
     public static function SendMail($to, $subject, $content){
+        $url = "https://api.elasticemail.com/v2/email/send";
         $key = "FA3EE1F2AFEF40E9A682313EA23EBF9105059FADD008D1340BA0C1F747C0F7A7640C16EEE85CEB0001738FDDB0B43360";
-        $url = 'https://api.elasticemail.com/v2/email/send';
+        
        
         //$email = new \SendGrid\Mail\Mail();
         //$email->setFrom("llowlynsmith@gmail.com");
@@ -37,7 +38,7 @@ class SendEmail{
                 
                 $result=curl_exec ($ch);
                 curl_close ($ch);
-                               
+                                         
 
             } catch (Exception $e) {
                 echo 'Email exception Caught : ' . $e->getMessage() . "\n";
