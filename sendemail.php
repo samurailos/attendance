@@ -1,24 +1,25 @@
-<?php
-// using SendGrid's PHP Library
-// https://github.com/sendgrid/sendgrid-php
-require 'vendor/autoload.php'; // If you're using Composer (recommended)
-// Comment out the above line if not using Composer
-// require("./sendgrid-php.php");
-// If not using Composer, uncomment the above line
+<?php 
+    require_once 'vendor/autoload.php';
 
-class SendEmail{
+    class SendEmail{
 
-    public static function SendMail($to, $subject, $content){
-        $url = "https://api.elasticemail.com/v2/email/send";
-        $key = "FA3EE1F2AFEF40E9A682313EA23EBF9105059FADD008D1340BA0C1F747C0F7A7640C16EEE85CEB0001738FDDB0B43360";
-        
-       
-        //$email = new \SendGrid\Mail\Mail();
-        //$email->setFrom("llowlynsmith@gmail.com");
+        public static function SendMail($to, $subject, $content){
+            $key = 'E86A23D7A191EC8A43E0A5A1B14EDEA39E99A07AEC3BE4135E2AD7A20E10E20A6B71564E8F8130778F48A83F2D5DA994';
+            $url = 'https://api.elasticemail.com/v2/email/send';
+            
+            /* Sendgrid Alternative
+            $email = new \SendGrid\Mail\Mail();
+            $email->setFrom("llowlynsmith@gmail.com", "Llowlyn Smith");
+            $email->addTo($to);
+            $email->setSubject($subject);
+            $email->addContent("text/plain", $content);
 
-        try{
-            $email = array('from' => 'llowlynsmith@gmail.com',
-            'fromName' => 'I.T Conference',
+            //$email->addContent("text/html", $content);
+            $sendgrid = new \SendGrid($key);
+            */
+            try {
+                $email = array('from' => 'llowlynsmith@gmail.com',
+                'fromName' => 'I.T. Conference 2020',
                 'apikey' => $key,
                 'subject' => $subject,
                 'to' => $to,
@@ -38,35 +39,11 @@ class SendEmail{
                 
                 $result=curl_exec ($ch);
                 curl_close ($ch);
-                                         
-
-            } catch (Exception $e) {
+                
+                }catch (Exception $e) {
                 echo 'Email exception Caught : ' . $e->getMessage() . "\n";
                 return false;
             }
         }
     }
 ?>
-
-
-
-
-<!-- $email = new \SendGrid\Mail\Mail();
-$email->setFrom("test@example.com", "Example User");
-$email->setSubject("Sending with SendGrid is Fun");
-$email->addTo("test@example.com", "Example User");
-$email->addContent(
-    "text/plain", "and easy to do anywhere, even with PHP"
-);
-$email->addContent(
-    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-);
-$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
-try {
-    $response = $sendgrid->send($email);
-    print $response->statusCode() . "\n";
-    print_r($response->headers());
-    print $response->body() . "\n";
-} catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-}-->

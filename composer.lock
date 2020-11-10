@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "174cc4095982a587f79316d75627e962",
+    "content-hash": "df57ad2f666f3a39364d7abaa83b42db",
     "packages": [
         {
             "name": "elastic-email/web-api-client",
