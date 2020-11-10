@@ -12,6 +12,11 @@
         $email = $_POST['email'];
         $contact = $_POST['phone'];
         $specialty = $_POST['specialty'];
+        
+        $target_dir = 'uploads/';
+        $file = $target_dir . basename($_FILES["avatar"]["name"]);
+        
+        
         //Call the function to insert and track if successful or not
         $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty); 
         $specialtyName = $crud->getSpecialtyById($specialty);
