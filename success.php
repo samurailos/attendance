@@ -69,7 +69,7 @@
     
     <p class="card-text">Phone No.<?php echo $_POST['phone']; ?></p>
   </div>
-</div>  -->
+</div>  
 
 
 <?php require_once 'includes/footer.php'; ?>
