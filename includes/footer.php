@@ -1,12 +1,10 @@
 
-  <div id ="footer"> 
-  <br>
-  <br>
-  <?php
+<br/>
+<div id="footer" class="p-3 bg-primary text-white fixed bottom">
   
-        echo "<p>Copyright &copy " . date("Y") . " Los Inc. </p>"; ?>
-  </div>
-</div>
+      <p class="text-center">Copyright &copy; IT Conference Attendance System - Los Inc. <?php echo date('Y');?> 
+       </p>
+  
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

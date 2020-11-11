@@ -9,10 +9,10 @@
 
         }
         //function to insert a new record in the attendee db
-        public function insertAttendees($fname, $lname, $dob, $email, $phone, $specialty){
+        public function insertAttendees($fname, $lname, $dob, $email, $phone, $specialty, $avatar_path){
             try{
                   //define sql statement to be executed
-                  $sql ="INSERT INTO attendee (firstname, lastname, dateofbirth, emailaddress, phonenumber, specialty_id) VALUES(:fname, :lname, :dob, :email, :phone, :specialty)";  
+                  $sql ="INSERT INTO attendee (firstname, lastname, dateofbirth, emailaddress, phonenumber, specialty_id, avatar_path) VALUES(:fname, :lname, :dob, :email, :phone, :specialty, :avatar_path)";  
                   //prepare sql statement for execution
                   $stmt = $this->db->prepare($sql);
                   //bind all placeholders to the actual values
@@ -22,6 +22,9 @@
                   $stmt->bindparam(':email',$email);
                   $stmt->bindparam(':phone',$phone);
                   $stmt->bindparam(':specialty',$specialty);
+                  $stmt->bindparam(':avatar_path',$avatar_path);
+
+
                   //execute statement
                   $stmt->execute();
                   return true;  

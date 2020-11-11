@@ -1,12 +1,20 @@
 <?php
     //Development Connection
-    $host = 'localhost';
+    /*$host = 'localhost';
     $db = 'attendance_db';
     $user = 'root';
     $pass = '';
-    $charset = 'utf8mb4';
+    $charset = 'utf8mb4';*/
 
-    //Remote Database Connection
+    //New Remote Database Connection//
+    $host = 'remotemysql.com';
+    $db = 'OOpAJs8VPh';
+    $user = 'OOpAJs8VPh';
+    $pass = 'A8xV3UYbOB';
+    $charset = 'utf8mb4';
+    
+
+    //Old Remote Database Connection
    /* $host = 'remotemysql.com';
     $db = 'auPWtR9KzE';
     $user = 'auPWtR9KzE';

@@ -1,9 +1,9 @@
 <?php 
-$title = 'Index';
-require_once 'includes/header.php';
-require_once 'db/conn.php';
+    $title = 'Index';
+    require_once 'includes/header.php';
+    require_once 'db/conn.php';
 
-$results =$crud->getSpecialties();
+    $results =$crud->getSpecialties();
 
 ?>
 
@@ -49,12 +49,12 @@ $results =$crud->getSpecialties();
 </div>
 <br/>
 <div class="custom-file">
-   
-    <input type="file" accept="image/*" class="custom-file-input" id="avatar" name= "avatar">
+    
+    <input type="file" accept="image/*" class="custom-file-input" id="avatar" name="avatar">
     <label class="custom-file-label" for="avatar">Choose File</label>
     <small id="avatar" class="form-text text-danger">File Upload is Optional</small>
+    
 </div>
-
 
 <div class="text-center">
     <button type="submit" name= "submit" class="btn btn-primary" class="text-center">Submit</button>
@@ -63,3 +63,4 @@ $results =$crud->getSpecialties();
 </form>
 
 <?php require_once 'includes/footer.php'; ?>
+
